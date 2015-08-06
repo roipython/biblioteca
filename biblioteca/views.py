@@ -169,3 +169,5 @@ def updateAutor(request, id):
 	#return HttpResponse(autors)
 	return render_to_response('updateAutor.html', {'autor':autors})
 	#return render(request, 'updateAutor.html', args)
+
+print "hola mundo"
