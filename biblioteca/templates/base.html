@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/static/img/favicon.ico">
+
+    <title>{% block title %}{% endblock %}</title>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/signin.css" rel="stylesheet">
+    <link href="/static/css/buscar.css" rel="stylesheet">
+
+    <script src="/static/js/ie-emulation-modes-warning.js"></script>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/simple-sidebar.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/dashboard.css">
+    <style>
+    .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+      width: 100%;
+      margin: auto;
+    }
+    .container{
+        margin-top: 50px;
+    }
+    .carousel-inner{
+        margin-top: -19px;
+    }
+    .navbar .navbar-inverse{
+        margin-top: -50px;
+    }
+    .carousel-indicators {
+    bottom: -14px;
+}
+
+
+    .container {
+    width: 70%;
+    }
+
+
+  </style>
+</head>
+<body>
+
+
+
+
+<!-- menu -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand">Biblioteca Ciencias de la Educación</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/home/">Home</a></li>
+       <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Autor
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/register/">Adicionar</a></li>
+            <li><a href="#">Eliminar</a></li>
+            <li><a href="#">Buscar</a></li>
+            <li><a href="/autores/">Todos</a></li>
+
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Libro
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#"></a></li>
+            <li><a href="#">Adicionar</a></li>
+            <li><a href="#">Eliminar</a></li>
+            <li><a href="#">Buscar</a></li>
+            <li><a href="#">Todos</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Student
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Adicionar</a></li>
+            <li><a href="#">Eliminar</a></li>
+            <li><a href="#">Buscar</a></li>
+            <li><a href="#">Todos</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span>&nbsp;User:  {{ user.username }}</a></li>
+
+        <li><a href="/logout/"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- fin menu -->
+
+{% block slider %}{% endblock %}
+    {% block titulo %}{% endblock %}
+    {% block formulario %}{% endblock %}
+    {% block content %}{% endblock %}
+    {% block footer %}
+
+
+{% endblock %}
+
+	<script src="/static/js/ie10-viewport-bug-workaround.js"></script>
+
+ {% block fondo %}{% endblock %}
+</body>
+</html>

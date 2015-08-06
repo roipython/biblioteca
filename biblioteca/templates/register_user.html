@@ -1,0 +1,25 @@
+{% extends 'base_login.html' %}
+{% block content %}
+<div class="login" align="right">
+<a href="/"><button type="button" class="btn btn-success">Iniciar Session</button></a>
+</div>
+<div class="container">
+	
+	<form class="form-signin1" action="/register_user/" method="POST">{% csrf_token %}
+	<h2 class="form-signin-heading1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Register</h2>
+		
+
+		<input id="id_username" class="form-control" maxlength="30" name="username" type="text" placeholder="Username" required autofocus>{{form.id_username}}
+	<br>
+
+		<input id="id_password1" class="form-control" name="password1" type="password" placeholder="Password" required autofocus>{{form.id_password1}}
+		<br>
+
+		<input id="id_password2" class="form-control" name="password2" type="password" placeholder="Re -  Password" required autofocus>{{form.id_password2}}
+		<br>
+
+	<button class="btn btn-lg btn-primary btn-block" type="submit">Registrarse</button><br>
+
+	</form>	
+</div>
+{% endblock %}

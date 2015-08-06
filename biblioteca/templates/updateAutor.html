@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}
+Registrar
+{% endblock %}
+
+{% block formulario %}
+
+   <div class="container">
+
+
+
+      <form class="form-signin1" id="formulario" method="GET">
+      <h2 class="form-signin-heading1">&nbsp;&nbsp;&nbsp;Update User</h2>
+      {% for autor in autor %}
+
+       <input id="id_nombre" class="form-control" maxlength="30" name="nombre" type="text" value="{{ autor.nombre }}" placeholder="Introduzca Nombre"required autofocus>
+       <br>
+
+       <input id="id_apellidos" class="form-control" maxlength="40" name="apellidos" type="text" value="{{ autor.apellidos }}" placeholder="Introduzca Apellido"required autofocus>
+       <br>
+		<input id="id_email" class="form-control" maxlength="40" name="email" type="text" value="{{ autor.email }}" placeholder="Introduzca Email"required autofocus>
+       <br>
+
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Actualizar</button><br>
+
+
+        {% endfor %}
+
+      </form>
+
+    </div> <!-- /container -->
+
+        </form>
+
+{% endblock %}
