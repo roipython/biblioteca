@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+<div style="padding:20px;">
+    <form class="form-search form-inline" method="GET"  align="right"action="/buscar/autor/">
+        <div class="input-append">
+            <input type="text" class="search-query" placeholder="Search..."  name="q" id="q" />
+            <button type="submit" class="btn btn-success">Search</button>
+        </div>
+    </form>
+</div>
+<div class="new">
+        <a href="/register/"><button type="button" class="btn btn-primary" ><b>+</b>&nbsp;&nbsp;New</button></a>
+    </div>
+
+<br>
+{% if query %}
+<div class="table-responsive" >
+	<h1>Resultados para "{{query}}"</h1>
+{% endif %}
+	<table class="table table-striped">
+
+	{% if autors %}
+	
+	<thead>
+      <tr>
+        <th>#</th>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Email</th>
+        <th>Delete</th>
+        <th>Update</th>
+      </tr>
+    </thead>
+	
+    	  <tr>
+	      {% for autor in autors %}
+	      	<td>{{ autor.id }}</td>
+    	    <td>{{ autor.nombre }}</td>
+    	    <td>{{ autor.apellidos }}</td>
+    	    <td>{{ autor.email }}</td>
+    	    <td><a href='/delete/autor/{{autor.id}}'><button type="button" class="btn btn-success">Delete</button></a></td>
+            <td><a href='/delete/autor/{{autor.id}}'><button type="button" class="btn btn-info">Update</button></a></td>
+    	    </tr>
+	      {% endfor %}
+    	  
+		    {% else %}
+	      <p>No books found</p>
+	{% endif %}
+	</table>
+
+	</div>
+</div>
+
+{% endblock %}
